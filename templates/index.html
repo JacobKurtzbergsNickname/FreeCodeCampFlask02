@@ -1,35 +1,41 @@
-{% extends "base.html" %}
-
-{% block head %}
+{% extends "base.html" %} {% block head %}
 <title>First Page</title>
-{% endblock head %}
-
-{% block body %}
+{% endblock head %} {% block body %}
 <main>
-    <div class="container">
-        <header>
-            <h1 class="text-center mb-4">Careers at KimChi Engineering</h1>
-            <img class="img-fluid" src="{{url_for("static", filename="chris-abney-jungle.jpg")}}" alt="Welcome to the jungle" width="100%" height="600px">
-        </header>
-        <article>
-            <h2 class="text-center">About KimChi</h2>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis soluta odit rem nisi explicabo quo earum necessitatibus dolore, error doloremque officia? Eius voluptatem qui delectus! Est adipisci hic reiciendis itaque!</p>
-        </article>
-        <article>
-            <h2 class="text-center">Open Positions</h2>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis soluta odit rem nisi explicabo quo earum necessitatibus dolore, error doloremque officia? Eius voluptatem qui delectus! Est adipisci hic reiciendis itaque!</p>
-        </article>
-        <article>
-            <div class="text-center pt-2">
-                <button type="button" class="btn btn-primary btn-lg">Contact Us!</button>
-                <p class="mt-2">Copyright, Kirby 2023</p>
-            </div>
-        </article>
-    </div>
+  <div class="container">
+    <header>
+      <h1 class="text-center mb-4">Careers at KimChi Engineering</h1>
+      <img class="img-fluid" src="{{url_for("static",
+      filename="chris-abney-jungle.jpg")}}" alt="Welcome to the jungle"
+      width="100%" height="600px">
+    </header>
+    <article>
+      <h2 class="text-center">About KimChi</h2>
+      <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis soluta
+        odit rem nisi explicabo quo earum necessitatibus dolore, error
+        doloremque officia? Eius voluptatem qui delectus! Est adipisci hic
+        reiciendis itaque!
+      </p>
+    </article>
+    <article>
+      <h2 class="text-center">Open Positions</h2>
+      {% for job in jobs %} {% include "jobitem.html" %} {% endfor %}
+    </article>
+    <article>
+      <div class="text-center pt-2">
+        <button type="button" class="btn btn-primary btn-lg">
+          Contact Us!
+        </button>
+        <p class="mt-2">Copyright, Kirby 2023</p>
+      </div>
+    </article>
+  </div>
 </main>
-<div class="hidden" style="margin-top: 5%;">
-    <a href="/css_tutorial" class="btn btn-primary btn-lg active" role="button">To the CSS Tutorial</a>
+<div class="hidden" style="margin-top: 5%">
+  <a href="/css_tutorial" class="btn btn-primary btn-lg active" role="button"
+    >To the CSS Tutorial</a
+  >
 </div>
 
 {% endblock body %}
-
