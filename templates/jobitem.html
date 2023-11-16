@@ -1,24 +1,26 @@
 <div
-  class="border-bottom container"
-  style="margin-bottom: 6vh; background-color: rgba(11, 156, 49, 0.4)"
+  class="border border-primary border-2 container"
+  style="margin-bottom: 6vh; padding: 1vh"
 >
-  <div class="col-9">
-    <h4
-      class="lead"
-      style="font-weight: bold; color: rgb(68, 68, 68); margin-bottom: 3vh"
-    >
-      {{job["title"]}}
-    </h4>
-    <div style="margin: 0; padding: 0; border: 0">
-      <p class="lead"><b>Location:</b> {{job["location"]}}</p>
+  <div class="row">
+    <div class="col-md-10">
+      <h4
+        class="lead"
+        style="font-weight: bold; color: rgb(68, 68, 68); margin-bottom: 3vh"
+      >
+        {{job["title"]}}
+      </h4>
+      <div style="margin: 0; padding: 0; border: 0">
+        <p class="lead"><b>Location:</b> {{job["location"]}}</p>
+      </div>
+      {% if "salary" in job %}
+      <div style="margin: 0; padding: 0; border: 0">
+        <p class="lead"><b>Salary:</b> {{job["salary"]}}</p>
+      </div>
+      {% endif %}
     </div>
-    {% if "salary" in job %}
-    <div style="margin: 0; padding: 0; border: 0">
-      <p class="lead"><b>Salary:</b> {{job["salary"]}}</p>
+    <div class="col-md-2" style="align-self: center">
+      <button type="button" class="btn btn-primary btn-lg">Primary</button>
     </div>
-    {% endif %}
-  </div>
-  <div class="col-3">
-    <button type="button" class="btn btn-outline-primary">Primary</button>
   </div>
 </div>
